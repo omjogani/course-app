@@ -1,0 +1,76 @@
+{
+    "id": "001",
+    "name": "React JS Course",
+    "description": "The Ultimate Web Development with React Js.",
+    "length": 11,
+    "mapping": {
+        "type1": "video",
+        "type2": "video",
+        "type3": "video",
+        "type4": "video",
+        "type5": "quiz",
+        "type6": "video",
+        "type7": "video",
+        "type8": "video",
+        "type9": "video",
+        "type10": "quiz",
+        "type11": "video"
+    },
+    "tutorials": {
+        "videos": "l1EssrLxt7E, Rek0NWPCNOc, 2QR11oDukn4, l1EssrLxt7E, Rek0NWPCNOc, 2QR11oDukn4, l1EssrLxt7E, Rek0NWPCNOc, 2QR11oDukn4",
+        "test1": {
+            "length": 3,
+            "quiz1": {
+                "question": "What is HTML?",
+                "option1": "A Markdown Language",
+                "option2": "A Designing Framework",
+                "option3": "A Programming Language",
+                "option4": "A Library for AI",
+                "correctAns": 1
+            },
+            "quiz2": {
+                "question": "What is the use of HTML?",
+                "option1": "To build Mobile Application",
+                "option2": "To Design Webpages",
+                "option3": "To train models in Machine Learnings",
+                "option4": "In Cyber Security",
+                "correctAns": 2
+            },
+            "quiz3": {
+                "question": "Full form of CSS?",
+                "option1": "Constant Style Sheet",
+                "option2": "Case Sensitive Style",
+                "option3": "Computer Style Sheet",
+                "option4": "Cascaded Style Sheet",
+                "correctAns": 4
+            }
+        },
+        "test2": {
+            "length": 3,
+            "quiz1": {
+                "question": "What is HTML?",
+                "option1": "A Markdown Language",
+                "option2": "A Designing Framework",
+                "option3": "A Programming Language",
+                "option4": "A Library for AI",
+                "correctAns": 1
+            },
+            "quiz2": {
+                "question": "What is the use of HTML?",
+                "option1": "To build Mobile Application",
+                "option2": "To Design Webpages",
+                "option3": "To train models in Machine Learnings",
+                "option4": "In Cyber Security",
+                "correctAns": 2
+            },
+            "quiz3": {
+                "question": "Full form of CSS?",
+                "option1": "Constant Style Sheet",
+                "option2": "Case Sensitive Style",
+                "option3": "Computer Style Sheet",
+                "option4": "Cascaded Style Sheet",
+                "correctAns": 4
+            }
+        }
+    }
+}
