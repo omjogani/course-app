@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
         DeviceOrientation.portraitUp,
       ],
     );
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
     return MaterialApp(
       theme: ThemeData(
         fontFamily: "Sf Pro Text",

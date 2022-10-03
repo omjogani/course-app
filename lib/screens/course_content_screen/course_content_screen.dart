@@ -1,8 +1,5 @@
-import 'dart:convert' as convert;
 import 'dart:convert';
-import 'package:course_app/models/youtube_data.dart';
-import 'package:course_app/screens/course_content_screen/get_data_and_pass.dart';
-import 'package:http/http.dart' as http;
+import 'package:course_app/screens/course_content_screen/course_content_list_screen.dart.dart';
 import 'package:course_app/constant.dart';
 import 'package:flutter/material.dart';
 
@@ -14,20 +11,7 @@ class CourseContentScreen extends StatefulWidget {
 }
 
 class _CourseContentScreenState extends State<CourseContentScreen> {
-  navigatePlease(List<String> videoIdList, String courseName) {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => TestWidget(
-            videoIdList: videoIdList,
-            courseName: courseName,
-          ),
-        ),
-      );
-    });
-  }
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,8 +42,7 @@ class _CourseContentScreenState extends State<CourseContentScreen> {
                   String courseName = decodedJsonData["name"];
                   String videoList = decodedJsonData["tutorials"]["videos"];
                   List<String> videoIdList = videoList.split(',');
-                  // navigatePlease(videoIdList, courseName);
-                  return TestWidget(
+                  return CourseContentList(
                     videoIdList: videoIdList,
                     courseName: courseName,
                   );

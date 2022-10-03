@@ -11,30 +11,16 @@ class YouTubeDataInterface extends StatefulWidget {
     required this.videoId,
     required this.videoTitle,
     required this.videoAuthor,
+    required this.courseName,
   }) : super(key: key);
   final String videoId;
   final String videoTitle;
   final String videoAuthor;
+  final String courseName;
 
   @override
   State<YouTubeDataInterface> createState() => _YouTubeDataInterfaceState();
 }
-
-
-// class YouTubeDataInterface extends StatefulWidget {
-//   const YouTubeDataInterface({
-//     Key? key,
-//     required this.videoId,
-//     required this.videoTitle,
-//     required this.videoAuthor,
-//   }) : super(key: key);
-//   final String videoId;
-//   final String videoTitle;
-//   final String videoAuthor;
-
-//   @override
-//   _YouTubeDataInterfaceState createState() => _YouTubeDataInterfaceState();
-// }
 
 class _YouTubeDataInterfaceState extends State<YouTubeDataInterface> {
   bool isLoading = true;
@@ -63,17 +49,12 @@ class _YouTubeDataInterfaceState extends State<YouTubeDataInterface> {
   }
 
   @override
-  void initState() {
-    super.initState();
-    // getData(widget.videoId);
-  }
-
-  @override
   Widget build(BuildContext context) {
     return VideoPlayer(
             videoId: widget.videoId,
             title: widget.videoTitle,
             author: widget.videoAuthor,
+            courseName: widget.courseName,
           );
   }
 }

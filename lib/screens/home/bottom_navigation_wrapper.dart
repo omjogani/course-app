@@ -1,7 +1,7 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:course_app/constant.dart';
 import 'package:course_app/screens/course_content_screen/course_content_screen.dart';
-import 'package:course_app/screens/course_content_screen/get_data_and_pass.dart';
+import 'package:course_app/screens/course_content_screen/course_content_list_screen.dart.dart';
 import 'package:course_app/screens/course_library/course_library.dart';
 import 'package:course_app/screens/home/home_screen.dart';
 import 'package:course_app/screens/my_courses/my_courses.dart';
@@ -56,21 +56,6 @@ class _BottomNavigationWrapperState extends State<BottomNavigationWrapper> {
 
   @override
   Widget build(BuildContext context) {
-    // final currentConnectionStatus =
-    //     Provider.of<InternetConnectivityStatus?>(context);
-    // if (currentConnectionStatus == null) {
-    //   return const FullScreenLoading(
-    //     message: "Checking Internet Connection...",
-    //     simpleLoadingAnimation: false,
-    //   );
-    // }
-    // if (currentConnectionStatus == InternetConnectivityStatus.offline) {
-    //   return const NoInternetScreen();
-    // }
-    // if (currentTheme == -1) {
-    //   return const FullScreenLoading(
-    //       message: "Loading...", simpleLoadingAnimation: true);
-    // }
     return Scaffold(
       backgroundColor: kBackgroundColor,
       body: WillPopScope(
@@ -86,8 +71,8 @@ class _BottomNavigationWrapperState extends State<BottomNavigationWrapper> {
                 children: <Widget>[
                   // QuizScreen(),
                   
-                  HomeScreen(),
-                  // CourseContentScreen(),
+                  // HomeScreen(),
+                  CourseContentScreen(),
                   CourseLibrary(),
                   MyCourses(),
                 ],

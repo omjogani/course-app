@@ -7,8 +7,8 @@ import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 import 'dart:convert';
 
-class TestWidget extends StatefulWidget {
-  const TestWidget({
+class CourseContentList extends StatefulWidget {
+  const CourseContentList({
     Key? key,
     required this.videoIdList,
     required this.courseName,
@@ -17,10 +17,10 @@ class TestWidget extends StatefulWidget {
   final String courseName;
 
   @override
-  State<TestWidget> createState() => _TestWidgetState();
+  State<CourseContentList> createState() => _CourseContentListState();
 }
 
-class _TestWidgetState extends State<TestWidget> {
+class _CourseContentListState extends State<CourseContentList> {
   List<String> titleList = [];
   List<String> authorList = [];
   bool isLoading = true;
@@ -64,6 +64,7 @@ class _TestWidgetState extends State<TestWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       body: Column(
         children: <Widget>[
           const SizedBox(height: 32.0),
@@ -113,6 +114,7 @@ class _TestWidgetState extends State<TestWidget> {
                                   videoId: widget.videoIdList[videoIndex].trim(),
                                   videoTitle: titleList[videoIndex],
                                   videoAuthor: authorList[videoIndex],
+                                  courseName: widget.courseName,
                                 ),
                               ),
                             );
