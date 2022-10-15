@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:course_app/screens/course_content_screen/course_content_list_screen.dart.dart';
+import 'package:course_app/screens/course_content_screen/course_content_list_screen.dart';
 import 'package:course_app/constant.dart';
 import 'package:flutter/material.dart';
 

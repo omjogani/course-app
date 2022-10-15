@@ -1,9 +1,15 @@
+import 'package:course_app/constant.dart';
 import 'package:course_app/models/question_model.dart';
+import 'package:course_app/models/quiz_model.dart';
 import 'package:course_app/screens/result_screen/result_screen.dart';
 import 'package:flutter/material.dart';
 
 class QuizScreen extends StatefulWidget {
-  const QuizScreen({Key? key}) : super(key: key);
+  const QuizScreen({
+    Key? key,
+    required this.quiz,
+  }) : super(key: key);
+  final List<Quiz> quiz;
 
   @override
   State<QuizScreen> createState() => _QuizScreenState();
@@ -14,17 +20,32 @@ class _QuizScreenState extends State<QuizScreen> {
   int _score = 0;
   bool _isLocked = false;
   late PageController _controller;
+  List<Question> questions = [];
+  void processQuizToQuestion() {
+    for (var singleQuiz in widget.quiz) {
+      questions.add(Question(
+        question: singleQuiz.question,
+        options: <Option>[
+          Option(text: singleQuiz.option1,isCorrect: singleQuiz.correctAns == 1),
+          Option(text: singleQuiz.option2,isCorrect: singleQuiz.correctAns == 2),
+          Option(text: singleQuiz.option3,isCorrect: singleQuiz.correctAns == 3),
+          Option(text: singleQuiz.option4,isCorrect: singleQuiz.correctAns == 4),
+        ],
+      ));
+    }
+  }
 
   @override
   void initState() {
     super.initState();
+    processQuizToQuestion();
     _controller = PageController(initialPage: 0);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.transparent,
+      backgroundColor: Colors.transparent,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
@@ -42,6 +63,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 controller: _controller,
                 physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
+                  // TODO: Convert Quiz-> Question here...
                   final question = questions[index];
                   return buildQuestion(question);
                 },
@@ -56,8 +78,8 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 
   Widget buildQuizSubmitButton() {
-    return ElevatedButton(
-      onPressed: () {
+    return GestureDetector(
+      onTap: () {
         if (_questionNumber < questions.length) {
           _controller.nextPage(
             duration: const Duration(milliseconds: 250),
@@ -76,8 +98,22 @@ class _QuizScreenState extends State<QuizScreen> {
           );
         }
       },
-      child: Text(
-        _questionNumber < questions.length ? "Next Page" : "See the Result",
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+        decoration: BoxDecoration(
+          color: Colors.lightBlueAccent,
+          borderRadius: BorderRadius.circular(10.0),
+          boxShadow: const <BoxShadow>[
+            BoxShadow(
+              color: kShadowColor,
+              offset: Offset(0, 12),
+              blurRadius: 16.0,
+            ),
+          ],
+        ),
+        child: Text(
+          _questionNumber < questions.length ? "Next Page" : "See the Result",
+        ),
       ),
     );
   }
@@ -147,7 +183,7 @@ class OptionWidget extends StatelessWidget {
         padding: const EdgeInsets.all(12.0),
         margin: const EdgeInsets.symmetric(vertical: 8.0),
         decoration: BoxDecoration(
-          color: Colors.grey.shade200,
+          color: Colors.white60,
           borderRadius: BorderRadius.circular(16.0),
           border: Border.all(width: 1, color: color),
         ),

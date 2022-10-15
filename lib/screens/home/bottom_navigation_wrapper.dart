@@ -1,10 +1,11 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:course_app/constant.dart';
 import 'package:course_app/screens/course_content_screen/course_content_screen.dart';
-import 'package:course_app/screens/course_content_screen/course_content_list_screen.dart.dart';
+import 'package:course_app/screens/course_content_screen/course_content_list_screen.dart';
 import 'package:course_app/screens/course_library/course_library.dart';
 import 'package:course_app/screens/home/home_screen.dart';
 import 'package:course_app/screens/my_courses/my_courses.dart';
+import 'package:course_app/screens/quiz_screen/initial_quiz_instruction.dart';
 import 'package:course_app/screens/quiz_screen/quiz_screen.dart';
 import 'package:course_app/screens/video_player/video_data_interface.dart';
 import 'package:course_app/widgets/custom_showdialog.dart';
@@ -72,7 +73,8 @@ class _BottomNavigationWrapperState extends State<BottomNavigationWrapper> {
                   // QuizScreen(),
                   
                   // HomeScreen(),
-                  CourseContentScreen(),
+                  InitialQuizInstruction(),
+                  // CourseContentScreen(),
                   CourseLibrary(),
                   MyCourses(),
                 ],

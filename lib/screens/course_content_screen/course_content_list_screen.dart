@@ -1,7 +1,9 @@
 import 'package:course_app/constant.dart';
 import 'package:course_app/models/youtube_data.dart';
 import 'package:course_app/screens/course_content_screen/components/custom_course_content_list_tile.dart';
+import 'package:course_app/screens/quiz_screen/quiz_screen.dart';
 import 'package:course_app/screens/video_player/video_data_interface.dart';
+import 'package:course_app/widgets/custom_navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
@@ -68,7 +70,7 @@ class _CourseContentListState extends State<CourseContentList> {
       body: Column(
         children: <Widget>[
           const SizedBox(height: 32.0),
-          ContentScreenNavBar(title: widget.courseName),
+          CustomNavBar(title: widget.courseName),
           Expanded(
             child: FutureBuilder(
               future: DefaultAssetBundle.of(context).loadString(
@@ -125,7 +127,14 @@ class _CourseContentListState extends State<CourseContentList> {
                         return CustomCourseContentListTile(
                           title: "Assignment",
                           author: "Pending",
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => QuizScreen(quiz: []),
+                              ),
+                            );
+                          },
                           isQuiz: true,
                         );
                       }
@@ -144,24 +153,4 @@ class _CourseContentListState extends State<CourseContentList> {
   }
 }
 
-class ContentScreenNavBar extends StatelessWidget {
-  const ContentScreenNavBar({
-    Key? key,
-    required this.title,
-  }) : super(key: key);
-  final String title;
 
-  @override
-  Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
-    return SizedBox(
-      width: size.width * 0.90,
-      child: Text(
-        title,
-        maxLines: 1,
-        overflow: TextOverflow.ellipsis,
-        style: kTitleText,
-      ),
-    );
-  }
-}
