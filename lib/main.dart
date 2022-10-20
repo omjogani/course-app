@@ -1,4 +1,4 @@
-import 'package:course_app/screens/home/bottom_navigation_wrapper.dart';
+import 'package:course_app/screens/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: "Sf Pro Text",
       ),
-      home: BottomNavigationWrapper(),
+      home: const Splash(),
     );
   }
 }

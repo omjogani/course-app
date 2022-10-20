@@ -1,7 +1,6 @@
-import 'package:course_app/constant.dart';
 import 'package:course_app/models/youtube_data.dart';
 import 'package:course_app/screens/course_content_screen/components/custom_course_content_list_tile.dart';
-import 'package:course_app/screens/quiz_screen/quiz_screen.dart';
+import 'package:course_app/screens/quiz_screen/initial_quiz_instruction.dart';
 import 'package:course_app/screens/video_player/video_data_interface.dart';
 import 'package:course_app/widgets/custom_navbar.dart';
 import 'package:flutter/material.dart';
@@ -14,9 +13,15 @@ class CourseContentList extends StatefulWidget {
     Key? key,
     required this.videoIdList,
     required this.courseName,
+    required this.fileName,
+    required this.courseId,
+    required this.totalTests,
   }) : super(key: key);
   final List<String> videoIdList;
   final String courseName;
+  final String fileName;
+  final String courseId;
+  final int totalTests;
 
   @override
   State<CourseContentList> createState() => _CourseContentListState();
@@ -26,7 +31,7 @@ class _CourseContentListState extends State<CourseContentList> {
   List<String> titleList = [];
   List<String> authorList = [];
   bool isLoading = true;
-
+  int quizListIndex = 0;
   Future<List<String>> getData(String videoId) async {
     var url =
         Uri.parse("https://noembed.com/embed?url=https://youtu.be/$videoId");
@@ -73,8 +78,8 @@ class _CourseContentListState extends State<CourseContentList> {
           CustomNavBar(title: widget.courseName),
           Expanded(
             child: FutureBuilder(
-              future: DefaultAssetBundle.of(context).loadString(
-                  'assets/jsons/courses/reactjs.json'), // TODO: make it dynamic
+              future: DefaultAssetBundle.of(context)
+                  .loadString('assets/jsons/courses/${widget.fileName}.json'),
               builder: (context, snapshot) {
                 var decodedJsonData = json.decode(snapshot.data.toString());
                 if (decodedJsonData == null || isLoading) {
@@ -97,6 +102,7 @@ class _CourseContentListState extends State<CourseContentList> {
                 } else {
                   int courseLength = decodedJsonData["length"];
                   int videoIndex = -1;
+
                   return ListView.builder(
                     itemCount: courseLength,
                     itemBuilder: (context, index) {
@@ -113,10 +119,13 @@ class _CourseContentListState extends State<CourseContentList> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => YouTubeDataInterface(
-                                  videoId: widget.videoIdList[videoIndex].trim(),
+                                  videoId:
+                                      widget.videoIdList[videoIndex].trim(),
                                   videoTitle: titleList[videoIndex],
                                   videoAuthor: authorList[videoIndex],
                                   courseName: widget.courseName,
+                                  courseId: widget.courseId,
+                                  totalCourseItems: courseLength,
                                 ),
                               ),
                             );
@@ -124,14 +133,38 @@ class _CourseContentListState extends State<CourseContentList> {
                           isQuiz: false,
                         );
                       } else if (mapping == "quiz") {
+                        // int totalQuizIndex =
+                        //     decodedJsonData["tutorials"]["test$quizListIndex"]["length"];
+                        // dynamic decodedJsonDataQuiz = decodedJsonData["tutorials"]["test$quizListIndex"];
+                        // List<Quiz> quizListToBePassed = [];
+                        // for (int i = 1; i <= totalQuizIndex; i++) {
+                        //   Quiz quiz = Quiz(
+                        //     question: decodedJsonDataQuiz["quiz$i"]["question"],
+                        //     option1: decodedJsonDataQuiz["quiz$i"]["option1"],
+                        //     option2: decodedJsonDataQuiz["quiz$i"]["option2"],
+                        //     option3: decodedJsonDataQuiz["quiz$i"]["option3"],
+                        //     option4: decodedJsonDataQuiz["quiz$i"]["option4"],
+                        //     correctAns: decodedJsonDataQuiz["quiz$i"]["correctAns"],
+                        //   );
+                        //   quizListToBePassed.add(quiz);
+                        // }
+
                         return CustomCourseContentListTile(
                           title: "Assignment",
-                          author: "Pending",
+                          author: "Quiz",
                           onPressed: () {
+                            if (widget.totalTests > quizListIndex) {
+                              ++quizListIndex;
+                            }
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => QuizScreen(quiz: []),
+                                builder: (context) => InitialQuizInstruction(
+                                  fileName: widget.fileName,
+                                  testIndexNumber: quizListIndex,
+                                  courseId: widget.courseId,
+                                  totalCourseItems: courseLength,
+                                ),
                               ),
                             );
                           },
@@ -152,5 +185,3 @@ class _CourseContentListState extends State<CourseContentList> {
     );
   }
 }
-
-

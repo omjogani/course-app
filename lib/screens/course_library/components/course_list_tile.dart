@@ -12,6 +12,7 @@ class CourseListTile extends StatelessWidget {
     required this.buttonText,
     required this.onInfo,
     required this.isMyCourseSection,
+    required this.isInfo,
     this.percentage = 0,
   }) : super(key: key);
   final String imageURL;
@@ -23,6 +24,7 @@ class CourseListTile extends StatelessWidget {
   final Function onInfo;
   final bool isMyCourseSection;
   final int percentage;
+  final bool isInfo;
 
   @override
   Widget build(BuildContext context) {
@@ -49,12 +51,11 @@ class CourseListTile extends StatelessWidget {
               flex: 5,
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  child: Image.network(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10.0),
+                  child: Image.asset(
                     imageURL,
+                    fit: BoxFit.cover,
                     // fit: BoxFit.,
                   ),
                 ),
@@ -83,13 +84,14 @@ class CourseListTile extends StatelessWidget {
                               children: <Widget>[
                                 const SizedBox(height: 4.0),
                                 Text(
-                                  "$percentage%",
+                                  percentage >= 98 ? "100%" : "$percentage%",
                                 ),
                                 ClipRRect(
                                   borderRadius: BorderRadius.circular(5.0),
                                   child: LinearProgressIndicator(
                                     backgroundColor: Colors.lightBlueAccent,
-                                    valueColor: const AlwaysStoppedAnimation<Color>(
+                                    valueColor:
+                                        const AlwaysStoppedAnimation<Color>(
                                       Colors.blue,
                                     ),
                                     value: percentage / 100,
@@ -133,12 +135,12 @@ class CourseListTile extends StatelessWidget {
                               ),
                             ),
                           ),
-                          IconButton(
+                          isInfo ? IconButton(
                             onPressed: () => onInfo(),
                             icon: const Icon(
-                              Icons.info_outline_rounded,
+                              Icons.refresh_rounded,
                             ),
-                          ),
+                          ): SizedBox(),
                         ],
                       )
                     ],

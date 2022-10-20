@@ -40,6 +40,8 @@ dependencies:
   connectivity_plus: ^2.3.7
   cached_network_image: ^3.2.0
   youtube_player_flutter: ^8.1.0
+  confetti: ^0.7.0
+  lottie: ^1.4.2
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +71,7 @@ flutter:
     - assets/icons/
     - assets/jsons/
     - assets/jsons/courses/
+    - assets/lottie/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,10 +1,42 @@
+import 'package:course_app/screens/authentication/initial_auth.dart';
 import 'package:course_app/screens/course_library/components/course_list_tile.dart';
 import 'package:course_app/screens/home/components/navbar.dart';
 import 'package:course_app/screens/home/components/trending_course.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  String name = "";
+
+  loadNameFromSharedPreferences() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    String? nameLocal = preferences.getString("name");
+    if (nameLocal == null) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => InitialAuthentication(),
+        ),
+      );
+    }else{
+      setState(() {
+        name = nameLocal;
+      });
+    }
+  }
+
+  @override
+  void initState() {
+    loadNameFromSharedPreferences();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +48,7 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             const SizedBox(height: 25.0),
-            const NavBar(),
+            NavBar(name: name),
             const TitleText(titleText: "Recent Course"),
             CourseTrending(
               onPressed: () {
@@ -33,9 +65,8 @@ class HomeScreen extends StatelessWidget {
                 physics: const BouncingScrollPhysics(),
                 children: <Widget>[
                   CourseListTile(
-                    imageURL:
-                        "https://cdn-icons-png.flaticon.com/512/1183/1183621.png",
-                    title: "React Course",
+                    imageURL: "assets/images/reactjs.jpg",
+                    title: "My Courses",
                     description: "The Ultimate Web Development with react.",
                     buttonText: "ENROLLED",
                     isAlreadyEnrolled: true,
@@ -43,29 +74,7 @@ class HomeScreen extends StatelessWidget {
                     onPressed: () {
                       print("object");
                     },
-                    onInfo: () {},
-                  ),
-                  CourseListTile(
-                    imageURL:
-                        "https://cdn-icons-png.flaticon.com/512/3098/3098090.png",
-                    title: "Python Course",
-                    description:
-                        "The Ultimate Python Course for professionals.",
-                    buttonText: "ENROLL",
-                    isAlreadyEnrolled: false,
-                    isMyCourseSection: false,
-                    onPressed: () {},
-                    onInfo: () {},
-                  ),
-                  CourseListTile(
-                    imageURL:
-                        "https://cdn-icons-png.flaticon.com/512/3344/3344400.png",
-                    title: "JavaScript Course",
-                    description: "The Ultimate Web Development with JS",
-                    buttonText: "ENROLLED",
-                    isAlreadyEnrolled: true,
-                    isMyCourseSection: false,
-                    onPressed: () {},
+                    isInfo: false,
                     onInfo: () {},
                   ),
                 ],

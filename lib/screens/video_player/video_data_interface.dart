@@ -4,7 +4,6 @@ import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 import 'package:course_app/models/youtube_data.dart';
 
-
 class YouTubeDataInterface extends StatefulWidget {
   const YouTubeDataInterface({
     Key? key,
@@ -12,11 +11,15 @@ class YouTubeDataInterface extends StatefulWidget {
     required this.videoTitle,
     required this.videoAuthor,
     required this.courseName,
+    required this.courseId,
+    required this.totalCourseItems,
   }) : super(key: key);
   final String videoId;
   final String videoTitle;
   final String videoAuthor;
   final String courseName;
+  final String courseId;
+  final int totalCourseItems;
 
   @override
   State<YouTubeDataInterface> createState() => _YouTubeDataInterfaceState();
@@ -51,10 +54,12 @@ class _YouTubeDataInterfaceState extends State<YouTubeDataInterface> {
   @override
   Widget build(BuildContext context) {
     return VideoPlayer(
-            videoId: widget.videoId,
-            title: widget.videoTitle,
-            author: widget.videoAuthor,
-            courseName: widget.courseName,
-          );
+      videoId: widget.videoId,
+      title: widget.videoTitle,
+      author: widget.videoAuthor,
+      courseName: widget.courseName,
+      courseId: widget.courseId,
+      totalCourseItems: widget.totalCourseItems,
+    );
   }
 }

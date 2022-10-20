@@ -1,0 +1,39 @@
+{
+    "totalCourses": 4,
+    "course1":{
+        "id": "001",
+        "name": "Web Development",
+        "description": "The Ultimate Course for Web Development.",
+        "isWebUrl": false,
+        "imageUrl": "assets/images/htmlcss.jpg",
+        "totalTest": 3,
+        "fileName": "reactjs"
+    },
+    "course2":{
+        "id": "002",
+        "name": "Python Course",
+        "description": "The Ultimate Python Course for Professionals.",
+        "isWebUrl": false,
+        "imageUrl": "assets/images/python.jpg",
+        "totalTest": 3,
+        "fileName": "python"
+    },
+    "course3":{
+        "id": "003",
+        "name": "ReactJS Course",
+        "description": "The Ultimate ReactJs Course for Professionals.",
+        "isWebUrl": false,
+        "imageUrl": "assets/images/reactjs.jpg",
+        "totalTest": 3,
+        "fileName": "reactjs"
+    },
+    "course4":{
+        "id": "004",
+        "name": "Flutter Course",
+        "description": "Flutter Course for Mobile App Development.",
+        "isWebUrl": false,
+        "imageUrl": "assets/images/flutter.jpg",
+        "totalTest": 3,
+        "fileName": "flutter"
+    }
+}

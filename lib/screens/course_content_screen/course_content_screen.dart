@@ -4,14 +4,19 @@ import 'package:course_app/constant.dart';
 import 'package:flutter/material.dart';
 
 class CourseContentScreen extends StatefulWidget {
-  const CourseContentScreen({Key? key}) : super(key: key);
+  const CourseContentScreen({
+    Key? key,
+    required this.fileName,
+    required this.totalTests,
+  }) : super(key: key);
+  final String fileName;
+  final int totalTests;
 
   @override
   State<CourseContentScreen> createState() => _CourseContentScreenState();
 }
 
 class _CourseContentScreenState extends State<CourseContentScreen> {
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +26,7 @@ class _CourseContentScreenState extends State<CourseContentScreen> {
           Expanded(
             child: FutureBuilder(
               future: DefaultAssetBundle.of(context).loadString(
-                  'assets/jsons/courses/reactjs.json'), // TODO: make it dynamic
+                  'assets/jsons/courses/${widget.fileName}.json'), // TODO: make it dynamic
               builder: (context, snapshot) {
                 var decodedJsonData = json.decode(snapshot.data.toString());
                 if (decodedJsonData == null) {
@@ -40,11 +45,15 @@ class _CourseContentScreenState extends State<CourseContentScreen> {
                   );
                 } else {
                   String courseName = decodedJsonData["name"];
+                  String courseId = decodedJsonData["id"];
                   String videoList = decodedJsonData["tutorials"]["videos"];
                   List<String> videoIdList = videoList.split(',');
                   return CourseContentList(
                     videoIdList: videoIdList,
                     courseName: courseName,
+                    fileName: widget.fileName,
+                    courseId: courseId,
+                    totalTests: widget.totalTests,
                   );
                 }
               },

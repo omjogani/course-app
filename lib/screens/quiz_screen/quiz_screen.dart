@@ -8,8 +8,14 @@ class QuizScreen extends StatefulWidget {
   const QuizScreen({
     Key? key,
     required this.quiz,
+    required this.courseId,
+    required this.totalCourseItems,
+    required this.testNo,
   }) : super(key: key);
   final List<Quiz> quiz;
+  final String courseId;
+  final int totalCourseItems;
+  final int testNo;
 
   @override
   State<QuizScreen> createState() => _QuizScreenState();
@@ -26,10 +32,14 @@ class _QuizScreenState extends State<QuizScreen> {
       questions.add(Question(
         question: singleQuiz.question,
         options: <Option>[
-          Option(text: singleQuiz.option1,isCorrect: singleQuiz.correctAns == 1),
-          Option(text: singleQuiz.option2,isCorrect: singleQuiz.correctAns == 2),
-          Option(text: singleQuiz.option3,isCorrect: singleQuiz.correctAns == 3),
-          Option(text: singleQuiz.option4,isCorrect: singleQuiz.correctAns == 4),
+          Option(
+              text: singleQuiz.option1, isCorrect: singleQuiz.correctAns == 1),
+          Option(
+              text: singleQuiz.option2, isCorrect: singleQuiz.correctAns == 2),
+          Option(
+              text: singleQuiz.option3, isCorrect: singleQuiz.correctAns == 3),
+          Option(
+              text: singleQuiz.option4, isCorrect: singleQuiz.correctAns == 4),
         ],
       ));
     }
@@ -45,7 +55,6 @@ class _QuizScreenState extends State<QuizScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
@@ -63,7 +72,6 @@ class _QuizScreenState extends State<QuizScreen> {
                 controller: _controller,
                 physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
-                  // TODO: Convert Quiz-> Question here...
                   final question = questions[index];
                   return buildQuestion(question);
                 },
@@ -93,7 +101,12 @@ class _QuizScreenState extends State<QuizScreen> {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => ResultScreen(score: _score),
+              builder: (context) => ResultScreen(
+                score: _score,
+                courseId: widget.courseId,
+                totalCourseItems: widget.totalCourseItems,
+                testNo: widget.testNo,
+              ),
             ),
           );
         }

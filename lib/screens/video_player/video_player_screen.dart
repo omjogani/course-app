@@ -2,6 +2,7 @@ import 'package:course_app/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class VideoPlayer extends StatefulWidget {
@@ -11,11 +12,15 @@ class VideoPlayer extends StatefulWidget {
     required this.title,
     required this.author,
     required this.courseName,
+    required this.courseId,
+    required this.totalCourseItems,
   }) : super(key: key);
   final String videoId;
   final String title;
   final String author;
   final String courseName;
+  final String courseId;
+  final int totalCourseItems;
 
   @override
   State<VideoPlayer> createState() => _VideoPlayerState();
@@ -124,8 +129,25 @@ class _VideoPlayerState extends State<VideoPlayer> {
                 onReady: () {
                   _isPlayerReady = true;
                 },
-                onEnded: (data) {
+                onEnded: (data) async {
                   // TODO: Update Shared Preferences for Course Progress
+                  
+                  SharedPreferences preferences = await SharedPreferences.getInstance();
+                  List<String>? courseProgress = preferences.getStringList(widget.courseId);
+                  if(courseProgress == null){
+                    print("Something Went Wrong!");
+                  }else{
+                    double currentCourseProgress = double.parse(courseProgress[0]);
+                    double progress = currentCourseProgress + (100/ widget.totalCourseItems);
+                    List<String> updatedListToBeStored = [
+                      progress.toStringAsFixed(0).toString(),
+                    ];
+                    for(int i = 0; i < courseProgress.length; i++){
+                      if(i == 0) continue;
+                      updatedListToBeStored.add(courseProgress[i]);
+                    }
+                    preferences.setStringList(widget.courseId, updatedListToBeStored);
+                  }
                   showDialog(
                     context: context,
                     builder: (context) => CupertinoAlertDialog(

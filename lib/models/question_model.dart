@@ -28,7 +28,7 @@ final questions = [
     options: [
       const Option(text: "Server", isCorrect: false),
       const Option(text: "Javascript Framework", isCorrect: false),
-      const Option(text: "Stylesheet", isCorrect: true),
+      const Option(text: "Stylesheets", isCorrect: true),
       const Option(text: "Game", isCorrect: false),
     ],
   ),

@@ -13,11 +13,18 @@ class CustomNavBar extends StatelessWidget {
     final Size size = MediaQuery.of(context).size;
     return SizedBox(
       width: size.width * 0.90,
-      child: Text(
-        title,
-        maxLines: 1,
-        overflow: TextOverflow.ellipsis,
-        style: kTitleText,
+      child: Row(
+        children: [
+          IconButton(onPressed: () {
+            Navigator.pop(context);
+          }, icon: Icon(Icons.arrow_back_rounded)),
+          Text(
+            title,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: kTitleText,
+          ),
+        ],
       ),
     );
   }

@@ -72,9 +72,10 @@ class _BottomNavigationWrapperState extends State<BottomNavigationWrapper> {
                 children: <Widget>[
                   // QuizScreen(),
                   
-                  // HomeScreen(),
-                  InitialQuizInstruction(),
+                  HomeScreen(),
+                  // InitialQuizInstruction(),
                   // CourseContentScreen(),
+                  // CourseLibrary(),
                   CourseLibrary(),
                   MyCourses(),
                 ],
