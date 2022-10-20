@@ -57,9 +57,11 @@ class _CourseContentListState extends State<CourseContentList> {
       titleList.add(retrievedList.first);
       authorList.add(retrievedList.last);
     }
-    setState(() {
-      isLoading = false;
-    });
+    if (this.mounted) {
+      setState(() {
+        isLoading = false;
+      });
+    }
   }
 
   @override

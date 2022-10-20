@@ -1,0 +1,119 @@
+{
+    "id": "002",
+    "name": "Python Course",
+    "description": "The Ultimate Python Course for Professionals.",
+    "length": 23,
+    "mapping": {
+        "type1": "video",
+        "type2": "video",
+        "type3": "video",
+        "type4": "video",
+        "type5": "quiz",
+        "type6": "video",
+        "type7": "video",
+        "type8": "video",
+        "type9": "video",
+        "type10": "video",
+        "type11": "video",
+        "type12": "video",
+        "type13": "video",
+        "type14": "video",
+        "type15": "quiz",
+        "type16": "video",
+        "type17": "video",
+        "type18": "video",
+        "type19": "video",
+        "type20": "video",
+        "type21": "video",
+        "type22": "video",
+        "type23": "quiz"
+    },
+    "tutorials": {
+        "videos": "YYXdXT2l-Gg,k9TUPpGqYTo,khKv-8q7YmY,W8KRzm-HUcc,daefaLgNkw0,DZwmZ8Usvnk,6iF8Xb7Z3wQ,9Os0o3wzS_I,CqvZ3vGoGs0,xFciV6Ew5r4,DjEuROpsvp4,NDFbXIiqT4o,U2ZN104hIcc,N5vscPTWKOk,YJC6ldI3hWk,cY2NXB_Tqq0,HW29067qVWk,QVdf0LgmICw,ajrtAuDg3yw,3dt4OGnU5sM",
+        "test1": {
+            "quizNo": 1,
+            "length": 4,
+            "quiz1": {
+                "question": "What is Python?",
+                "option1": "A Markdown Language",
+                "option2": "A Designing Framework",
+                "option3": "A Programming Language",
+                "option4": "A Library for AI",
+                "correctAns": 3
+            },
+            "quiz2": {
+                "question": "What is the Panda's in python?",
+                "option1": "Framework",
+                "option2": "Designing Tool",
+                "option3": "Library",
+                "option4": "None",
+                "correctAns": 3
+            },
+            "quiz3": {
+                "question": "In Which language is python written?",
+                "option1": "PHP",
+                "option2": "C",
+                "option3": "Ruby",
+                "option4": "Typescript",
+                "correctAns": 2
+            },
+            "quiz4": {
+                "question": "Which one of the following is the correct extension of the Python file?",
+                "option1": ".py",
+                "option2": ".python",
+                "option3": ".p",
+                "option4": "All of above",
+                "correctAns": 1
+            }
+        },
+        "test2": {
+            "quizNo": 2,
+            "length": 3,
+            "quiz1": {
+                "question": "Which character is used in Python to make a single line comment?",
+                "option1": "/",
+                "option2": "//",
+                "option3": "#",
+                "option4": "!",
+                "correctAns": 3
+            },
+            "quiz2": {
+                "question": "Python have which libraries",
+                "option1": "Pandas",
+                "option2": "NumPy",
+                "option3": "Tensorflow",
+                "option4": "All of above",
+                "correctAns": 4
+            },
+            "quiz3": {
+                "question": "Tensorflow library is used for ?",
+                "option1": "Data science",
+                "option2": "Machine Learning",
+                "option3": "Graphs",
+                "option4": "Designing",
+                "correctAns": 2
+            }
+        },
+        "test3": {
+            "quizNo": 2,
+            "length": 2,
+            "quiz1": {
+                "question": "NumPy library is used for ?",
+                "option1": "Data science",
+                "option2": "Machine Learning",
+                "option3": "Graphs",
+                "option4": "Designing",
+                "correctAns": 1
+            },
+            "quiz2": {
+                "question": "Which framwork is used for Web development",
+                "option1": "NumPy",
+                "option2": "Tensorflow",
+                "option3": "Pandas",
+                "option4": "Django",
+                "correctAns": 4
+            }
+        }
+        
+    }
+}

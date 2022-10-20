@@ -1,0 +1,119 @@
+{
+    "id": "004",
+    "name": "Flutter Course",
+    "description": "Flutter Course for Mobile App Development.",
+    "length": 12,
+    "mapping": {
+        "type1": "video",
+        "type2": "video",
+        "type3": "video",
+        "type4": "video",
+        "type5": "quiz",
+        "type6": "video",
+        "type7": "video",
+        "type8": "video",
+        "type9": "video",
+        "type10": "video",
+        "type11": "video",
+        "type12": "video",
+        "type13": "video",
+        "type14": "video",
+        "type15": "quiz",
+        "type16": "video",
+        "type17": "video",
+        "type18": "video",
+        "type19": "video",
+        "type20": "video",
+        "type21": "video",
+        "type22": "video",
+        "type23": "quiz"
+    },
+    "tutorials": {
+        "videos": "1ukSR1GRtMU,bKueYVtV0eA,FLQ-Vhw1NYQ,TSIhiZ5jRB0,C5lpPjoivaw,km2P_KQJyO0,zwPBMg3SHVU,Hxh6nNHSUjo,ABmqtI7ec7E,H0cJ0gUlgE8,a6oKFvGuTH4,siFU8c_Heu0,RdPkFd6_fTA,zNZvuP8h1vs,c063ddhWafo,p5dkB3Mrxdo,_AC90CiDoKA,QgQJJ0y0A6w,XIxahpXU_QE,jAxNZYX7mHM",
+        "test1": {
+            "quizNo": 1,
+            "length": 4,
+            "quiz1": {
+                "question": "Flutter is Developed by?",
+                "option1": "Microsoft",
+                "option2": "Meta",
+                "option3": "Google",
+                "option4": "Adobe",
+                "correctAns": 3
+            },
+            "quiz2": {
+                "question": "Which language is used by Flutter?",
+                "option1": "JavaScript",
+                "option2": "Dart",
+                "option3": "JavaScript",
+                "option4": "Java",
+                "correctAns": 2
+            },
+            "quiz3": {
+                "question": "Why Flutter is known for cross-platform?",
+                "option1": "Due to single code base run on IOS and Android",
+                "option2": "Due to Dart Language",
+                "option3": "Due to Null Safety",
+                "option4": "Due to Google's Product",
+                "correctAns": 1
+            },
+            "quiz4": {
+                "question": "Which companies using flutter currently?",
+                "option1": "BMW",
+                "option2": "Dream11",
+                "option3": "Google",
+                "option4": "All of above",
+                "correctAns": 4
+            }
+        },
+        "test2": {
+            "quizNo": 2,
+            "length": 3,
+            "quiz1": {
+                "question": "Which character is used in Flutter to make a single line comment?",
+                "option1": "/",
+                "option2": "//",
+                "option3": "#",
+                "option4": "!",
+                "correctAns": 2
+            },
+            "quiz2": {
+                "question": "Which are the major widgets in flutter?",
+                "option1": "Stateless",
+                "option2": "Statefull",
+                "option3": "Container",
+                "option4": "Option 1 & 2",
+                "correctAns": 4
+            },
+            "quiz3": {
+                "question": "What is intl Package?",
+                "option1": "Date & Time Formatted",
+                "option2": "UI Toolkit",
+                "option3": "UI Graphs",
+                "option4": "Devtools",
+                "correctAns": 1
+            }
+        },
+        "test3": {
+            "quizNo": 2,
+            "length": 2,
+            "quiz1": {
+                "question": "Which is the major features of Flutter for developers?",
+                "option1": "devtools",
+                "option2": "UI Designing",
+                "option3": "Fast Development",
+                "option4": "All of above",
+                "correctAns": 4
+            },
+            "quiz2": {
+                "question": "When is the state management libraries?",
+                "option1": "Provider",
+                "option2": "Intl",
+                "option3": "GetX",
+                "option4": "Option 1 & 3",
+                "correctAns": 4
+            }
+        }
+        
+    }
+}

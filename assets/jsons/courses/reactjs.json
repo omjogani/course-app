@@ -1,8 +1,8 @@
 {
-    "id": "001",
-    "name": "React JS Course",
-    "description": "The Ultimate Web Development with React Js.",
-    "length": 12,
+    "id": "003",
+    "name": "React js Course",
+    "description": "The Ultimate ReactJs Course for Professionals.",
+    "length": 23,
     "mapping": {
         "type1": "video",
         "type2": "video",
@@ -13,94 +13,105 @@
         "type7": "video",
         "type8": "video",
         "type9": "video",
-        "type10": "quiz",
+        "type10": "video",
         "type11": "video",
-        "type12": "quiz"
+        "type12": "video",
+        "type13": "video",
+        "type14": "video",
+        "type15": "quiz",
+        "type16": "video",
+        "type17": "video",
+        "type18": "video",
+        "type19": "video",
+        "type20": "video",
+        "type21": "video",
+        "type22": "video",
+        "type23": "quiz"
     },
     "tutorials": {
-        "videos": "l1EssrLxt7E, Rek0NWPCNOc, 2QR11oDukn4, l1EssrLxt7E, Rek0NWPCNOc, 2QR11oDukn4, l1EssrLxt7E, Rek0NWPCNOc, 2QR11oDukn4",
+        "videos": "QFaFIcGhPoM,9hb_0TZ_MVI,9VIiLJL0H4Y,Y2hgEGPzTZY,Cla1WwguArA,lnV34uLEzis,oecI26cWqzk,7fPXI_MnBOY,m7OWXtbiXX8,4ORZ1GmjaMc,uirRaVjRsf4,5_PdMS9CLLI,Znqv84xi8Vs,kVWpBtRjkCk,QpfyjwhY9kg,7o5FPaVA9m0,5s8Ol9uw-yM,0sasRxl35_8,xlPxnc5uUPQ,j5P9FHiBVNo",
         "test1": {
             "quizNo": 1,
-            "length": 3,
+            "length": 4,
             "quiz1": {
-                "question": "What is HTML?",
+                "question": "What is React?",
                 "option1": "A Markdown Language",
                 "option2": "A Designing Framework",
                 "option3": "A Programming Language",
-                "option4": "A Library for AI",
-                "correctAns": 1
+                "option4": "Javascript library",
+                "correctAns": 3
             },
             "quiz2": {
-                "question": "What is the use of HTML?",
-                "option1": "To build Mobile Application",
-                "option2": "To Design Webpages",
-                "option3": "To train models in Machine Learnings",
-                "option4": "In Cyber Security",
-                "correctAns": 2
+                "question": "Which of the following acts as the input of a class-based component?",
+                "option1": "Class",
+                "option2": "Class",
+                "option3": "Class",
+                "option4": "Props",
+                "correctAns": 4
             },
             "quiz3": {
-                "question": "Full form of CSS?",
-                "option1": "Constant Style Sheet",
-                "option2": "Case Sensitive Style",
-                "option3": "Computer Style Sheet",
-                "option4": "Cascaded Style Sheet",
-                "correctAns": 4
+                "question": "What is a state in React?",
+                "option1": "A permanent storage.",
+                "option2": "Internal storage of the component.",
+                "option3": "External storage of the component.",
+                "option4": "TypescriptNone of the above.",
+                "correctAns": 2
+            },
+            "quiz4": {
+                "question": "Does React.js create a VIRTUAL DOM in the memory?",
+                "option1": "true",
+                "option2": "false",
+                "option3": "maybe",
+                "option4": "none",
+                "correctAns": 1
             }
         },
         "test2": {
             "quizNo": 2,
             "length": 3,
             "quiz1": {
-                "question": "Who is Jaylo?",
-                "option1": "A d2d Student",
-                "option2": "Person from Surat",
-                "option3": "A man from surendranagar",
-                "option4": "A damn body who is never speak abuse and only gand maring",
+                "question": "What does ES6 stand for?",
+                "option1": "ECMAScript 6",
+                "option2": "ECMA 6",
+                "option3": "ECMAJavaScript 6",
+                "option4": "EJavaScript 6",
                 "correctAns": 1
             },
             "quiz2": {
-                "question": "What is the use of HTML?",
-                "option1": "To build Mobile Application",
-                "option2": "To Design Webpages",
-                "option3": "To train models in Machine Learnings",
-                "option4": "In Cyber Security",
-                "correctAns": 2
+                "question": "Which of the following lifecycle events React components have at the highest level?",
+                "option1": "Destruction",
+                "option2": "Initialization",
+                "option3": "State/Property Updates",
+                "option4": "All of above",
+                "correctAns": 4
             },
             "quiz3": {
-                "question": "Full form of CSS?",
-                "option1": "Constant Style Sheet",
-                "option2": "Case Sensitive Style",
-                "option3": "Computer Style Sheet",
-                "option4": "Cascaded Style Sheet",
+                "question": "Which of the following is the correct name of React.js?",
+                "option1": "React",
+                "option2": "React.js",
+                "option3": "ReactJs",
+                "option4": "All of above",
                 "correctAns": 4
             }
         },
         "test3": {
             "quizNo": 3,
-            "length": 3,
+            "length": 2,
             "quiz1": {
-                "question": "What is Om?",
-                "option1": "A Markdown Language",
-                "option2": "A Designing Framework",
-                "option3": "A Programming Language",
-                "option4": "A Library for AI",
-                "correctAns": 1
+                "question": "Which of the following keyword is used to create a class inheritance?",
+                "option1": "Create",
+                "option2": "Inherits",
+                "option3": "Extends",
+                "option4": "This",
+                "correctAns": 3
             },
             "quiz2": {
-                "question": "What is the use of HTML?",
-                "option1": "To build Mobile Application",
-                "option2": "To Design Webpages",
-                "option3": "To train models in Machine Learnings",
-                "option4": "In Cyber Security",
+                "question": "What of the following is used in React.js to increase performance?",
+                "option1": "Original DOM",
+                "option2": "Virtual DOM",
+                "option3": "Both A and B.",
+                "option4": "None of the above.",
                 "correctAns": 2
-            },
-            "quiz3": {
-                "question": "Full form of CSS?",
-                "option1": "Constant Style Sheet",
-                "option2": "Case Sensitive Style",
-                "option3": "Computer Style Sheet",
-                "option4": "Cascaded Style Sheet",
-                "correctAns": 4
             }
         }
         

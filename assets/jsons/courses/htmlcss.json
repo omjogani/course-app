@@ -1,0 +1,107 @@
+{
+    "id": "001",
+    "name": "Web Development",
+    "description": "The Ultimate Course for Web Development.",
+    "length": 12,
+    "mapping": {
+        "type1": "video",
+        "type2": "video",
+        "type3": "video",
+        "type4": "video",
+        "type5": "quiz",
+        "type6": "video",
+        "type7": "video",
+        "type8": "video",
+        "type9": "video",
+        "type10": "quiz",
+        "type11": "video",
+        "type12": "quiz"
+    },
+    "tutorials": {
+        "videos": "l1EssrLxt7E, Rek0NWPCNOc, 2QR11oDukn4, l1EssrLxt7E, Rek0NWPCNOc, 2QR11oDukn4, l1EssrLxt7E, Rek0NWPCNOc, 2QR11oDukn4",
+        "test1": {
+            "quizNo": 1,
+            "length": 3,
+            "quiz1": {
+                "question": "What is HTML?",
+                "option1": "A Markdown Language",
+                "option2": "A Designing Framework",
+                "option3": "A Programming Language",
+                "option4": "A Library for AI",
+                "correctAns": 1
+            },
+            "quiz2": {
+                "question": "What is the use of HTML?",
+                "option1": "To build Mobile Application",
+                "option2": "To Design Webpages",
+                "option3": "To train models in Machine Learnings",
+                "option4": "In Cyber Security",
+                "correctAns": 2
+            },
+            "quiz3": {
+                "question": "Full form of CSS?",
+                "option1": "Constant Style Sheet",
+                "option2": "Case Sensitive Style",
+                "option3": "Computer Style Sheet",
+                "option4": "Cascaded Style Sheet",
+                "correctAns": 4
+            }
+        },
+        "test2": {
+            "quizNo": 2,
+            "length": 3,
+            "quiz1": {
+                "question": "Which is HTML Element?",
+                "option1": "<p>",
+                "option2": "<dev>",
+                "option3": "<hello>",
+                "option4": "<html1>",
+                "correctAns": 1
+            },
+            "quiz2": {
+                "question": "What is the use of JavaScript?",
+                "option1": "In IOT",
+                "option2": "To make Webpage dynamic",
+                "option3": "To train models in Machine Learnings",
+                "option4": "In Cyber Security",
+                "correctAns": 2
+            },
+            "quiz3": {
+                "question": "How to get ID of html Element in JavaScript?",
+                "option1": "Using Variable",
+                "option2": "Using getByClass()",
+                "option3": "Using getElementById",
+                "option4": "By Reference",
+                "correctAns": 3
+            }
+        },
+        "test3": {
+            "quizNo": 3,
+            "length": 3,
+            "quiz1": {
+                "question": "How to add JavaScript to Html File?",
+                "option1": "Using JavaScript Code",
+                "option2": "Using linkRef",
+                "option3": "Using div Tag",
+                "option4": "Using script Tag",
+                "correctAns": 4
+            },
+            "quiz2": {
+                "question": "Which property is used to change fontSize?",
+                "option1": "font-radius",
+                "option2": "font-size",
+                "option3": "font-width",
+                "option4": "font-decorations",
+                "correctAns": 2
+            },
+            "quiz3": {
+                "question": "How to align text in center?",
+                "option1": "text-align: center",
+                "option2": "align-text: center",
+                "option3": "font-align: center",
+                "option4": "align-font: center",
+                "correctAns": 1
+            }
+        }
+    }
+}

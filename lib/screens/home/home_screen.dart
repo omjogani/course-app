@@ -1,7 +1,9 @@
+import 'package:course_app/constant.dart';
 import 'package:course_app/screens/authentication/initial_auth.dart';
 import 'package:course_app/screens/course_library/components/course_list_tile.dart';
 import 'package:course_app/screens/home/components/navbar.dart';
 import 'package:course_app/screens/home/components/trending_course.dart';
+import 'package:course_app/screens/my_courses/my_courses.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -25,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
           builder: (context) => InitialAuthentication(),
         ),
       );
-    }else{
+    } else {
       setState(() {
         name = nameLocal;
       });
@@ -59,20 +61,29 @@ class _HomeScreenState extends State<HomeScreen> {
               title: "Zero to Hero React Js Course",
               isPremium: true,
             ),
-            const TitleText(titleText: "Course Library"),
+            const TitleText(titleText: "Start Learning"),
             Expanded(
               child: ListView(
                 physics: const BouncingScrollPhysics(),
                 children: <Widget>[
                   CourseListTile(
-                    imageURL: "assets/images/reactjs.jpg",
+                    imageURL: "assets/images/logo.png",
                     title: "My Courses",
-                    description: "The Ultimate Web Development with react.",
-                    buttonText: "ENROLLED",
-                    isAlreadyEnrolled: true,
+                    description:
+                        "Work Hard, Develop Skills and Solve Problems.",
+                    buttonText: "My COURSES",
+                    isAlreadyEnrolled: false,
                     isMyCourseSection: false,
                     onPressed: () {
-                      print("object");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Scaffold(
+                            backgroundColor: kBackgroundColor,
+                            body: MyCourses(),
+                          ),
+                        ),
+                      );
                     },
                     isInfo: false,
                     onInfo: () {},
